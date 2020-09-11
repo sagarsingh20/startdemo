@@ -1,0 +1,16 @@
+$primary-color: #369;
+$text: center;
+$width:100%;
+$height: 100%;
+.form-group {
+    padding: 10px;
+}
+
+.form {
+    width: $width;
+    height: $height;
+}
+
+h2 {
+    color: $primary-color
+}

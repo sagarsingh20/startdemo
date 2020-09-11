@@ -1,0 +1,23 @@
+$primary-color: #369;
+$text: center;
+$width:100%;
+$height: 100px;
+.container {
+    //background-color: $primary-color;
+    text-align: $text;
+    height: $height;
+    width: $width;
+}
+
+.form-group {
+    padding: 10px;
+}
+
+.form {
+    width: $width;
+    height: $height;
+}
+
+h2 {
+    color: $primary-color
+}

@@ -1,0 +1,38 @@
+<!---a routerLink="/login"><button class="btn btn-success">Log Out</button></a>
+<a routerLink="/user-list"><button class="btn btn-success">Add User</button></a>
+<th><a routerLink="/create-user"><button class="btn btn-success">Edit</button></a></th-->
+
+
+<div class="container">
+    <div class="form-group">
+        <button type="button" class="btn btn-primary" (click)="back()" value="click"> LogOut </button>
+    </div>
+    <div class="row">
+        <h2 class="col-4">User List</h2>
+        <button type="button" class="btn btn-primary col-sm-2" (click)="add()" value="click"> Add User</button>
+    </div>
+
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <!-- <th>Id</th> -->
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let key of localdata">
+                    <!-- <td>{{key.id}}</td> -->
+                    <td>{{key.fullName}}</td>
+                    <td>{{key.email}}</td>
+                    <td>{{key.gender}}</td>
+                    <td><button class="btn btn-primary" (click)="add()">Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

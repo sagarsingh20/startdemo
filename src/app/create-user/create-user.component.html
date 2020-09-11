@@ -1,0 +1,51 @@
+<div class="container">
+    <h2>Create User</h2>
+    <div class="createForm">
+
+        <form #createForm='ngForm' (ngSubmit)="createForm.valid && createform(create)" nonvalidate>
+            <!-- <div class="form-group">
+                <label class="control-label col-sm-2" for="id">ID:</label>
+                <input type="number" name="id" [(ngModel)]=create.id #id="ngModel">
+            </div> -->
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="fullName">Full Name:</label>
+                <input type="text" name="fullName" [(ngModel)]=create.fullName #fullName="ngModel" required full-name>
+                <div *ngIf="createForm.submitted && fullName.errors?.required && email.untouched">
+                    <small class="text-danger">Enter the Full Name</small>
+                </div>
+                <div *ngIf="fullName.touched">
+                    <small class="text-danger" *ngIf="fullName.errors?.required">Name is Required</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Email:</label>
+                <input type="email" name="email" [(ngModel)]='create.email' #email="ngModel" required email>
+                <div *ngIf="createForm.submitted && email.errors?.required && email.untouched">
+                    <small class="text-danger">Email is Required</small>
+                </div>
+
+                <div *ngIf="email.touched && email.invalid">
+                    <small class="text-danger" *ngIf="email.errors?.required">Email is a required field!</small>
+                    <small class="text-danger" *ngIf="email.errors?.email">This is not a valid Email!!!</small>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="gender"> Select Gender: </label>
+                <select class="form-control col-sm-2" name="gender" [(ngModel)]='create.gender' #gender="ngModel" required gender>
+                    <option value="Select"></option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <div *ngIf="createForm.submitted && gender.errors?.required && gender.untouched">
+                    <small class="text-danger">Gender is Required</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success"> Submit </button>
+            </div>
+        </form>
+    </div>
+</div>
